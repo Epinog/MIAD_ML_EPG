@@ -11,7 +11,7 @@ import os
 
 def predict_price(features):
     #establecemos la ruta del modelo en pkl
-    regressor = joblib.load(os.path.dirname(_file_) + '/Autos_precio.pkl')
+    regressor = joblib.load(os.path.dirname(__file__) + '/Autos_precio.pkl')
     print(regressor)
     #cargamos los datos para generar la estructura
     dataTraining = pd.read_csv('https://raw.githubusercontent.com/albahnsen/MIAD_ML_and_NLP/main/datasets/dataTrain_carListings.zip')
