@@ -45,7 +45,7 @@ def predict_price(features):
         df1['Inflexion'] = 1
     else:
         df1['Inflexion'] = 0
-    df1 = df1.drop('Price', axis=1)
+    #df1 = df1.drop('Price', axis=1)
         
     # Se realiza la predicción
     predic = regressor.predict(df1.drop('Price', axis=1))[0]
