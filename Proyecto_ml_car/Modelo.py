@@ -52,7 +52,7 @@ def predict_price(features):
     return predic
 
 #función inicializadora
-if _name_ == "_main_":
+if __name__ == "__main__":
     
     if len(sys.argv) == 1:
         print('Missing data, please check Year, Mileage, State and brand of car')

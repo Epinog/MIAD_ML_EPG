@@ -11,7 +11,7 @@ from flask_cors import CORS
 #se carga la función del Modelo.py
 from Modelo import predict_price
 
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes and origins
 
 api = Api(
