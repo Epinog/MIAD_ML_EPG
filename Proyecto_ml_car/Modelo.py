@@ -27,7 +27,7 @@ def predict_price(features):
     df1 = df_train_A.iloc[[0],:]
     df1[df1 > 0]= 0
     #variables de captura
-    state = 'State_'+features[2]
+    state = 'State_ '+features[2]
     make = 'Make_'+features[3]
     model = 'Model_'+features[4]
     df1['Year'] = int(features[0])
@@ -45,6 +45,7 @@ def predict_price(features):
         df1['Inflexion'] = 1
     else:
         df1['Inflexion'] = 0
+    df1 = df1.drop('Price', axis=1)
         
     # Se realiza la predicción
     predic = regressor.predict(df1.drop('Price', axis=1))[0]
