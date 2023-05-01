@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 from flask import Flask
@@ -61,7 +61,7 @@ parser.add_argument(
     location='args')
 
 resource_fields = api.model('Resource', {
-    'result': fields.String,
+    'Estimated price for this car is': fields.String,
 })
 
 @ns.route('/')
@@ -78,4 +78,16 @@ class CarApi(Resource):
     
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False, host='0.0.0.0', port=5000)
+
+
+# In[2]:
+
+
+pip install flask_restx
+
+
+# In[ ]:
+
+
+
 
