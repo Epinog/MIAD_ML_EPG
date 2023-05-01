@@ -14,6 +14,7 @@ def predict_price(features):
     regressor = joblib.load(os.path.dirname(__file__) + '/Autos_precio.pkl')
     print(regressor)
     #cargamos los datos para generar la estructura
+    dataTraining = []
     dataTraining = pd.read_csv('https://raw.githubusercontent.com/albahnsen/MIAD_ML_and_NLP/main/datasets/dataTrain_carListings.zip')
     #generamos una copia del Df
     df_train_A =  dataTraining.copy()
@@ -45,11 +46,10 @@ def predict_price(features):
         df1['Inflexion'] = 1
     else:
         df1['Inflexion'] = 0
-    #df1 = df1.drop('Price', axis=1)
-        
+    df1 = df1.drop('Price', axis=1)
+    my_list = list(df1)    
     # Se realiza la predicción
-    predic = regressor.predict(df1.drop('Price', axis=1))[0]
-
+    predic = regressor.predict(df1)[0]
     return predic
 
 #función inicializadora
