@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[ ]:
 
 
 from flask import Flask
@@ -61,7 +61,7 @@ parser.add_argument(
     location='args')
 
 resource_fields = api.model('Resource', {
-    'Estimated price for this car is': fields.String,
+    'result': fields.String,
 })
 
 @ns.route('/')
