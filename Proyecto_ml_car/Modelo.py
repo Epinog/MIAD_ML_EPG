@@ -31,7 +31,7 @@ def predict_price(features):
     state = 'State_ '+features[2]
     make = 'Make_'+features[3]
     model = 'Model_'+features[4]
-    df1['State_FL'] = int(0)
+    df1['State_ FL'] = int(0)
     df1['Make_Jeep'] = int(0)
     df1['Model_Wrangler'] = int(0)
     df1['Year'] = int(features[0])
