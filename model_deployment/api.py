@@ -1,10 +1,13 @@
 #!/usr/bin/python
+
 from flask import Flask
-from flask_restplus import Api, Resource, fields
+from flask_restx import Api, Resource, fields
 import joblib
 from m09_model_deployment import predict_proba
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes and origins
 
 api = Api(
     app, 
@@ -42,4 +45,4 @@ class PhishingApi(Resource):
     
     
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=5000)
